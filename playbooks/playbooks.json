@@ -1,0 +1,192 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "0c20cc35-7c0c-48c9-83bb-74fe2bda5c9a",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Cyware CTIX Feed - 1.0.0",
+      "description": "An automated Threat Intelligence Platform (TIP) for ingestion, enrichment, analysis, prioritization, actioning, and bidirectional sharing of threat data.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Cyware",
+        "cyware-ctix-feed"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "8b78bf4b-feca-4ddb-919a-81f735d06d87",
+          "collection": "/api/3/workflow_collections/0c20cc35-7c0c-48c9-83bb-74fe2bda5c9a",
+          "triggerLimit": null,
+          "description": "Retrieves the detailed list of Save Result Set data for CTIX 3.0 version. All the SDOs are available over the save result set V3 API.",
+          "name": "Get Save Result Set Data",
+          "tag": "#Cyware CTIX Feed",
+          "recordTags": [
+            "Cyware",
+            "cyware-ctix-feed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9d0d976f-3bf7-4b90-a4e1-9dac52a15c9a",
+          "steps": [
+            {
+              "uuid": "9d0d976f-3bf7-4b90-a4e1-9dac52a15c9a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "a2016677-6d07-4271-8b14-34c7e8a2c667",
+                "title": "Cyware CTIX Feed: Get Save Result Set Data",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2770d721-3bc2-44cb-ab1f-41b20c1c1db5",
+              "@type": "WorkflowStep",
+              "name": "Get Save Result Set Data",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cyware CTIX Feed",
+                "config": "''",
+                "params": {
+                  "version": "v3",
+                  "label_name": "",
+                  "from_timestamp": "",
+                  "to_timestamp": "",
+                  "page_size": 100,
+                  "page": 1
+                },
+                "version": "1.0.0",
+                "connector": "cyware-ctix-feed",
+                "operation": "get_save_result_set_data",
+                "operationTitle": "Get Save Result Set Data",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7c2d8c32-4a37-4780-a491-0b51c95f6de0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Save Result Set Data",
+              "sourceStep": "/api/3/workflow_steps/9d0d976f-3bf7-4b90-a4e1-9dac52a15c9a",
+              "targetStep": "/api/3/workflow_steps/2770d721-3bc2-44cb-ab1f-41b20c1c1db5"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d6dbb757-1e11-4ebb-a224-2aa6e76abb5b",
+          "collection": "/api/3/workflow_collections/0c20cc35-7c0c-48c9-83bb-74fe2bda5c9a",
+          "triggerLimit": null,
+          "description": "Retrieves the detailed list of Save Result Set Indicators for CTIX 3.0 version. All the Indicator SDOs are available over the save result set V3 API.",
+          "name": "Get Save Result Set Indicators",
+          "tag": "#Cyware CTIX Feed",
+          "recordTags": [
+            "Cyware",
+            "cyware-ctix-feed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/da178c82-d1bc-4e2a-82f6-da6c885422a1",
+          "steps": [
+            {
+              "uuid": "da178c82-d1bc-4e2a-82f6-da6c885422a1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "212f6831-746c-4af5-a274-f70ee80413e0",
+                "title": "Cyware CTIX Feed: Get Save Result Set Indicators",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "bf10ca77-0031-4b6b-ad02-a55c5441f50b",
+              "@type": "WorkflowStep",
+              "name": "Get Save Result Set Indicators",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cyware CTIX Feed",
+                "config": "''",
+                "params": {
+                  "version": "v3",
+                  "label_name": "",
+                  "from_timestamp": "",
+                  "to_timestamp": "",
+                  "record_number": "Fetch Limited Records"
+                },
+                "version": "1.0.0",
+                "connector": "cyware-ctix-feed",
+                "operation": "get_save_result_set_indicators",
+                "operationTitle": "Get Save Result Set Indicators",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "25ac95ab-8aee-450f-9260-565ee4462571",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Save Result Set Indicators",
+              "sourceStep": "/api/3/workflow_steps/da178c82-d1bc-4e2a-82f6-da6c885422a1",
+              "targetStep": "/api/3/workflow_steps/bf10ca77-0031-4b6b-ad02-a55c5441f50b"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
