@@ -10,6 +10,19 @@
   "icon_small_name": "cyware_ctix_small.png",
   "icon_large_name": "cyware_ctix_large.png",
   "help_online": "",
+  "ingestion_supported": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
+  "tags": [
+    "ThreatIntel"
+  ],
+  "ingestion_preferences": {
+    "modules": [
+      "threat_intel_feeds",
+      "indicators"
+    ]
+  },
   "configuration": {
     "fields": [
       {
