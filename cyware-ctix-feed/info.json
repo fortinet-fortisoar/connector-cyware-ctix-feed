@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "An automated Threat Intelligence Platform (TIP) for ingestion, enrichment, analysis, prioritization, actioning, and bidirectional sharing of threat data.",
   "publisher": "Fortinet",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "category": "Threat Intelligence Exchange",
   "icon_small_name": "cyware_ctix_small.png",
