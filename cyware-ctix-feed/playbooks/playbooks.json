@@ -8,7 +8,7 @@
       "visible": true,
       "image": null,
       "uuid": "0c20cc35-7c0c-48c9-83bb-74fe2bda5c9a",
-      "id": 203,
+      "id": 244,
       "deletedAt": null,
       "importedBy": [],
       "recordTags": [
@@ -117,7 +117,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "3c99a591-4aaa-46f8-9024-8261321aaa80",
-          "id": 2052,
+          "id": 2689,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -219,7 +219,7 @@
           "groups": [],
           "priority": null,
           "uuid": "8b78bf4b-feca-4ddb-919a-81f735d06d87",
-          "id": 2053,
+          "id": 2690,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -242,7 +242,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1684910611,
+          "lastModifyDate": 1687259441,
           "collection": "/api/3/workflow_collections/0c20cc35-7c0c-48c9-83bb-74fe2bda5c9a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/eb65cf17-df15-4b05-9c0b-a69ca3939e48",
@@ -548,7 +548,7 @@
                   "input": {
                     "params": []
                   },
-                  "_configuration_schema": "[\n  {\n    \"title\":\"Pull Sample Indicators in Past X Minutes\",\n    \"name\":\"fetch_data_in_last_X_minutes\",\n    \"type\":\"text\",\n    \"tooltip\":\"Pull the incidents in the past X minutes. e.g. 14400 minutes are 10 days.\",\n    \"required\":true,\n    \"editable\":true,\n    \"visible\":true\n  },\n  {\n    \"title\":\"Reputation\",\n    \"name\":\"reputation\",\n    \"type\":\"select\",\n    \"tooltip\":\"Default Reputation to be set for the feeds.\",\n    \"required\":true,\n    \"editable\":true,\n    \"visible\":true,\n    \"options\":[\n      \"Good\",\n      \"Suspicious\",\n      \"Malicious\",\n      \"No Reputation Available\",\n      \"TBD\"\n    ]\n  },\n  {\n    \"title\":\"Version\",\n    \"name\":\"version\",\n    \"type\":\"text\",\n    \"tooltip\":\"Specify the version of the CTIX application.\",\n    \"required\":true,\n    \"editable\":true,\n    \"visible\":true\n  },\n  {\n    \"title\":\"Label Name\",\n    \"name\":\"label_name\",\n    \"type\":\"text\",\n    \"tooltip\":\"Specify the label name to filter the data.\",\n    \"required\":false,\n    \"editable\":true,\n    \"visible\":true\n  },\n  {\n  \"title\": \"Number of Records to Return\",\n  \"name\": \"record_number\",\n  \"type\": \"select\",\n  \"visible\": true,\n  \"editable\": true,\n  \"required\": true,\n  \"options\": [\n    \"Fetch All Records\",\n    \"Fetch Limited Records\"\n  ],\n  \"onchange\": {\n    \"Fetch All Records\": [],\n    \"Fetch Limited Records\": [\n      {\n        \"title\": \"Limit\",\n        \"required\": true,\n        \"editable\": true,\n        \"visible\": true,\n        \"type\": \"integer\",\n        \"name\": \"page_size\",\n        \"tooltip\": \"Specify the count of records that the operation should include per page.\"\n      },\n      {\n        \"title\": \"Offset\",\n        \"required\": true,\n        \"editable\": true,\n        \"visible\": true,\n        \"type\": \"integer\",\n        \"name\": \"page_number\",\n        \"tooltip\": \"Specify the page number from which to retrieve the records. The default value is 1\"\n      }\n    ]\n  }\n}\n]",
+                  "_configuration_schema": "[\n  {\n    \"title\":\"Pull Sample Indicators in Past X Minutes\",\n    \"name\":\"fetch_data_in_last_X_minutes\",\n    \"type\":\"text\",\n    \"tooltip\":\"Pull the incidents in the past X minutes. e.g. 14400 minutes are 10 days.\",\n    \"required\":true,\n    \"editable\":true,\n    \"visible\":true\n  },\n  {\n    \"title\":\"Reputation\",\n    \"name\":\"reputation\",\n    \"type\":\"select\",\n    \"tooltip\":\"Default Reputation to be set for the feeds.\",\n    \"required\":true,\n    \"editable\":true,\n    \"visible\":true,\n    \"options\":[\n      \"Good\",\n      \"Suspicious\",\n      \"Malicious\",\n      \"No Reputation Available\",\n      \"TBD\"\n    ]\n  },\n  {\n    \"title\":\"Label Name\",\n    \"name\":\"label_name\",\n    \"type\":\"text\",\n    \"tooltip\":\"Specify the label name to filter the data.\",\n    \"required\":false,\n    \"editable\":true,\n    \"visible\":true\n  },\n  {\n  \"title\": \"Number of Records to Return\",\n  \"name\": \"record_number\",\n  \"type\": \"select\",\n  \"visible\": true,\n  \"editable\": true,\n  \"required\": true,\n  \"options\": [\n    \"Fetch All Records\",\n    \"Fetch Limited Records\"\n  ],\n  \"onchange\": {\n    \"Fetch All Records\": [],\n    \"Fetch Limited Records\": [\n      {\n        \"title\": \"Limit\",\n        \"required\": true,\n        \"editable\": true,\n        \"visible\": true,\n        \"type\": \"integer\",\n        \"name\": \"page_size\",\n        \"tooltip\": \"Specify the count of records that the operation should include per page.\"\n      },\n      {\n        \"title\": \"Offset\",\n        \"required\": true,\n        \"editable\": true,\n        \"visible\": true,\n        \"type\": \"integer\",\n        \"name\": \"page_number\",\n        \"tooltip\": \"Specify the page number from which to retrieve the records. The default value is 1\"\n      }\n    ]\n  }\n}\n]",
                   "DragosLastAlertPullTime": "DragosAlertPullTime_{{vars['audit_info']['cyops_playbook_iri'].split('/')[-1].replace('-','_')}}"
                 }
               },
@@ -682,7 +682,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "987196c1-e75d-412d-bf07-57ec88abfe05",
-          "id": 2054,
+          "id": 2691,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -786,7 +786,7 @@
           "groups": [],
           "priority": null,
           "uuid": "d6dbb757-1e11-4ebb-a224-2aa6e76abb5b",
-          "id": 2055,
+          "id": 2692,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,

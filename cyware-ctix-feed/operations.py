@@ -68,8 +68,8 @@ class CywareFeed:
             raise ConnectorError(str(err))
 
 
-def build_params(params):
-    new_params = dict()
+def build_params(config, params):
+    new_params = {"version": config.get("version")}
     for k, v in params.items():
         if v is not None and v != '':
             if k in ("from_timestamp", "to_timestamp") and isinstance(v, str):
@@ -81,13 +81,13 @@ def build_params(params):
 
 def get_save_result_set_data(config, params):
     ob = CywareFeed(config)
-    params = build_params(params)
+    params = build_params(config, params)
     return ob.make_rest_call("/ingestion/rules/save_result_set/", params=params)
 
 
 def get_indicators(config, params):
     ob = CywareFeed(config)
-    params = build_params(params)
+    params = build_params(config, params)
     response = ob.make_rest_call("/ingestion/rules/save_result_set/", params=params)
     results = response.get("results", [])
     data, indicator_data = [], []
@@ -122,7 +122,7 @@ def get_save_result_set_indicators(config, params):
 def _check_health(config):
     ob = CywareFeed(config)
     params = {
-        "version": "v3",
+        "version": config.get("version"),
         "from_timestamp": int(datetime.now().timestamp())
     }
     resp = ob.make_rest_call("/ingestion/rules/save_result_set/", params=params)

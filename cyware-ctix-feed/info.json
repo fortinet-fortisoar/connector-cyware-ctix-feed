@@ -58,6 +58,17 @@
         "visible": true
       },
       {
+        "title": "Version",
+        "name": "version",
+        "type": "text",
+        "description": "Specify the version of the CTIX application.",
+        "tooltip": "Specify the version of the CTIX application.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": "v3"
+      },
+      {
         "title": "Verify SSL",
         "name": "verify_ssl",
         "type": "checkbox",
@@ -78,17 +89,6 @@
       "category": "investigation",
       "annotation": "get_save_result_set_data",
       "parameters": [
-        {
-          "title": "Version",
-          "name": "version",
-          "type": "text",
-          "description": "Specify the version of the CTIX application.",
-          "tooltip": "Specify the version of the CTIX application.",
-          "required": true,
-          "editable": true,
-          "visible": true,
-          "value": "v3"
-        },
         {
           "title": "Label Name",
           "name": "label_name",
@@ -222,17 +222,6 @@
       "category": "investigation",
       "annotation": "get_save_result_set_indicators",
       "parameters": [
-        {
-          "title": "Version",
-          "name": "version",
-          "type": "text",
-          "description": "Specify the version of the CTIX application.",
-          "tooltip": "Specify the version of the CTIX application.",
-          "required": true,
-          "editable": true,
-          "visible": true,
-          "value": "v3"
-        },
         {
           "title": "Label Name",
           "name": "label_name",
