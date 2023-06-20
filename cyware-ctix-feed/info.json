@@ -1,0 +1,341 @@
+{
+  "name": "cyware-ctix-feed",
+  "label": "Cyware CTIX Feed",
+  "version": "1.0.0",
+  "description": "An automated Threat Intelligence Platform (TIP) for ingestion, enrichment, analysis, prioritization, actioning, and bidirectional sharing of threat data.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Threat Intelligence Exchange",
+  "icon_small_name": "cyware_ctix_small.png",
+  "icon_large_name": "cyware_ctix_large.png",
+  "help_online": "",
+  "ingestion_supported": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
+  "tags": [
+    "ThreatIntel"
+  ],
+  "ingestion_preferences": {
+    "modules": [
+      "threat_intel_feeds",
+      "indicators"
+    ]
+  },
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "description": "URL of the CTIX server to which you will connect and perform the automated operations.",
+        "tooltip": "URL of the CTIX server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": ""
+      },
+      {
+        "title": "Access ID",
+        "type": "password",
+        "name": "access_id",
+        "description": "Access ID configured for your CTIX server to which you will connect and perform the automated operations.",
+        "tooltip": "Access ID configured for your CTIX server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": ""
+      },
+      {
+        "title": "Secret Key",
+        "type": "password",
+        "name": "secret_key",
+        "description": "Secret Key configured for your CTIX server to which you will connect and perform the automated operations.",
+        "tooltip": "Secret Key configured for your CTIX server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Version",
+        "name": "version",
+        "type": "text",
+        "description": "Specify the version of the CTIX application.",
+        "tooltip": "Specify the version of the CTIX application.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": "v3"
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_save_result_set_data",
+      "title": "Get Save Result Set Data",
+      "description": "Retrieves the detailed list of Save Result Set data for CTIX 3.0 version. All the SDOs are available over the save result set V3 API.",
+      "category": "investigation",
+      "annotation": "get_save_result_set_data",
+      "parameters": [
+        {
+          "title": "Label Name",
+          "name": "label_name",
+          "type": "text",
+          "description": "Specify the label name to filter the data.",
+          "tooltip": "Specify the label name to filter the data.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Start Datetime",
+          "name": "from_timestamp",
+          "type": "datetime",
+          "description": "Specify the datetime from when the data should be fetched.",
+          "tooltip": "Specify the datetime from when the data should be fetched.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "End Datetime",
+          "name": "to_timestamp",
+          "type": "datetime",
+          "description": "Specify the datetime until when the data should be fetched.",
+          "tooltip": "Specify the datetime until when the data should be fetched.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Limit",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page_size",
+          "value": 100,
+          "tooltip": "Specify the count of records that the operation should include per page.",
+          "description": "Specify the count of records that the operation should include per page."
+        },
+        {
+          "title": "Offset",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "value": 1,
+          "tooltip": "Specify the page number from which to retrieve the records. The default value is 1",
+          "description": "Specify the page number from which to retrieve the records. The default value is 1"
+        }
+      ],
+      "output_schema": {
+        "next": "",
+        "previous": "",
+        "page_size": "",
+        "total": "",
+        "results": [
+          {
+            "id": "",
+            "ctix_created": "",
+            "ctix_modified": "",
+            "version": "",
+            "ctix_tags": [
+              {
+                "id": "",
+                "name": "",
+                "type": "",
+                "created": "",
+                "modified": "",
+                "created_by": {
+                  "id": "",
+                  "email": "",
+                  "last_name": "",
+                  "first_name": ""
+                },
+                "colour_code": "",
+                "modified_by": {
+                  "id": "",
+                  "email": "",
+                  "last_name": "",
+                  "first_name": ""
+                }
+              }
+            ],
+            "data": [
+              {
+                "id": "",
+                "created": "",
+                "sources": [
+                  {
+                    "tlp": "",
+                    "name": "",
+                    "score": "",
+                    "last_seen": "",
+                    "first_seen": ""
+                  }
+                ],
+                "ctix_tlp": "",
+                "modified": "",
+                "sdo_name": "",
+                "sdo_type": "",
+                "ctix_score": "",
+                "analyst_tlp": "",
+                "ctix_created": "",
+                "is_whitelist": "",
+                "ctix_modified": "",
+                "is_deprecated": "",
+                "indicator_type": {
+                  "type": "",
+                  "attribute_field": ""
+                },
+                "is_false_positive": ""
+              }
+            ],
+            "timestamp": "",
+            "title": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_save_result_set_indicators",
+      "title": "Get Save Result Set Indicators",
+      "description": "Retrieves the detailed list of Save Result Set Indicators for CTIX 3.0 version. All the Indicator SDOs are available over the save result set V3 API.",
+      "category": "investigation",
+      "annotation": "get_save_result_set_indicators",
+      "parameters": [
+        {
+          "title": "Label Name",
+          "name": "label_name",
+          "type": "text",
+          "description": "Specify the label name to filter the data.",
+          "tooltip": "Specify the label name to filter the data.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Start Datetime",
+          "name": "from_timestamp",
+          "type": "datetime",
+          "description": "Specify the datetime from when the data should be fetched.",
+          "tooltip": "Specify the datetime from when the data should be fetched.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "End Datetime",
+          "name": "to_timestamp",
+          "type": "datetime",
+          "description": "Specify the datetime until when the data should be fetched.",
+          "tooltip": "Specify the datetime until when the data should be fetched.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Number of Records to Return",
+          "description": "Select whether you want this operation to Fetch Limited Records or Fetch All Records. If you select Fetch Limited Records, then you must specify the following additional parameters: Limit: Maximum number of results that this operation should return. Offset: 1 based index of the page that this operation should return.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "options": [
+            "Fetch All Records",
+            "Fetch Limited Records"
+          ],
+          "name": "record_number",
+          "value": "Fetch Limited Records",
+          "onchange": {
+            "Fetch All Records": [],
+            "Fetch Limited Records": [
+              {
+                "title": "Limit",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "integer",
+                "name": "page_size",
+                "value": 100,
+                "tooltip": "Specify the count of records that the operation should include per page.",
+                "description": "Specify the count of records that the operation should include per page."
+              },
+              {
+                "title": "Offset",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "integer",
+                "name": "page",
+                "value": 1,
+                "tooltip": "Specify the page number from which to retrieve the records. The default value is 1",
+                "description": "Specify the page number from which to retrieve the records. The default value is 1"
+              }
+            ]
+          }
+        }
+      ],
+      "output_schema": {
+        "next": "",
+        "previous": "",
+        "page_size": "",
+        "total": "",
+        "results": [
+          {
+            "id": "",
+            "created": "",
+            "sources": [
+              {
+                "tlp": "",
+                "name": "",
+                "score": "",
+                "last_seen": "",
+                "first_seen": ""
+              }
+            ],
+            "ctix_tlp": "",
+            "modified": "",
+            "sdo_name": "",
+            "sdo_type": "",
+            "ctix_score": "",
+            "analyst_tlp": "",
+            "ctix_created": "",
+            "is_whitelist": "",
+            "ctix_modified": "",
+            "is_deprecated": "",
+            "indicator_type": {
+              "type": "",
+              "attribute_field": ""
+            },
+            "is_false_positive": ""
+          }
+        ]
+      },
+      "enabled": true
+    }
+  ]
+}
+
+
